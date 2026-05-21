@@ -14,3 +14,7 @@ USE DATABASE weather_db;
 CREATE SCHEMA weather_schema;
 
 USE SCHEMA weather_schema;
+
+-- Create JSON File Format
+CREATE OR REPLACE FILE FORMAT json_format
+TYPE = JSON;
