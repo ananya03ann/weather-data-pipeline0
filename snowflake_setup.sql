@@ -18,3 +18,9 @@ USE SCHEMA weather_schema;
 -- Create JSON File Format
 CREATE OR REPLACE FILE FORMAT json_format
 TYPE = JSON;
+
+-- Create External Stage
+CREATE OR REPLACE STAGE weather_stage
+URL = 's3://weather-data-ann/'
+STORAGE_INTEGRATION = s3_int
+FILE_FORMAT = json_format;
