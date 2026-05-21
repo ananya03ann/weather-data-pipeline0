@@ -25,3 +25,14 @@ Amazon S3
 Snowpipe  
 ↓  
 Snowflake
+
+
+## ⚙️ Technologies Used
+
+- AWS Lambda
+- Amazon DynamoDB
+- DynamoDB Streams
+- Amazon S3
+- Amazon EventBridge
+- Snowflake
+- Python
