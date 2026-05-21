@@ -9,6 +9,9 @@ The pipeline automatically fetches weather data, processes it through AWS servic
 
 ## 🏗️ Architecture
 
+![Weather Pipeline Architecture](weather_architecture.jpeg)
+
+
 
 EventBridge  
 ↓  
