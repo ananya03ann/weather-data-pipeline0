@@ -10,7 +10,10 @@ def lambda_handler(event, context):
 
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
 
+    response = urllib.request.urlopen(url)
+    data = json.loads(response.read())
+
     return {
         "statusCode": 200,
-        "body": url
+        "body": data
     }
