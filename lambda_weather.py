@@ -16,7 +16,16 @@ def lambda_handler(event, context):
     response = urllib.request.urlopen(url)
     data = json.loads(response.read())
 
+    item = {
+        "city": city,
+        "timestamp": datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        "temperature": str(data["main"]["temp"]),
+        "humidity": str(data["main"]["humidity"])
+    }
+
+    table.put_item(Item=item)
+
     return {
         "statusCode": 200,
-        "body": "Connected to DynamoDB"
+        "body": "Data stored in DynamoDB"
     }
