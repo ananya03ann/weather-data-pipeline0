@@ -3,6 +3,9 @@ import urllib.request
 import boto3
 from datetime import datetime
 
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('weather_data')
+
 def lambda_handler(event, context):
 
     api_key = "YOUR_API_KEY"
@@ -15,5 +18,5 @@ def lambda_handler(event, context):
 
     return {
         "statusCode": 200,
-        "body": data
+        "body": "Connected to DynamoDB"
     }
