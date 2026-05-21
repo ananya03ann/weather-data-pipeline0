@@ -32,3 +32,17 @@ CREATE OR REPLACE TABLE weather_table (
     temperature FLOAT,
     humidity FLOAT
 );
+
+-- Create Snowpipe
+CREATE OR REPLACE PIPE weather_pipe
+AUTO_INGEST = TRUE
+AS
+COPY INTO weather_table
+FROM (
+    SELECT
+        $1:city::STRING,
+        TO_TIMESTAMP($1:timestamp::STRING),
+        $1:temperature::FLOAT,
+        $1:humidity::FLOAT
+    FROM @weather_stage
+);
