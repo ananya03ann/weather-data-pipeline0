@@ -24,3 +24,11 @@ CREATE OR REPLACE STAGE weather_stage
 URL = 's3://weather-data-ann/'
 STORAGE_INTEGRATION = s3_int
 FILE_FORMAT = json_format;
+
+-- Create Weather Table
+CREATE OR REPLACE TABLE weather_table (
+    city STRING,
+    timestamp TIMESTAMP,
+    temperature FLOAT,
+    humidity FLOAT
+);
