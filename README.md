@@ -65,13 +65,16 @@ Snowflake
 
 ## 📂 Project Structure
 
+```text
 weather-data-pipeline/
 │
 ├── lambda_weather.py
 ├── lambda_stream.py
 ├── snowflake_setup.sql
 ├── requirements.txt
+├── weather_architecture.jpeg
 └── README.md
+```
 
 ---
 
