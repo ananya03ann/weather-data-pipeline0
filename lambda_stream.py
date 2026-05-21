@@ -18,4 +18,12 @@ def lambda_handler(event, context):
                 "humidity": data['humidity']['S']
             }
 
+            file_name = f"stream_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+
+            s3.put_object(
+                Bucket="weather-data-ann",
+                Key=file_name,
+                Body=json.dumps(item)
+            )
+
     return "Stream processed"
