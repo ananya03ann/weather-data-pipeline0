@@ -11,4 +11,11 @@ def lambda_handler(event, context):
 
             data = record['dynamodb']['NewImage']
 
+            item = {
+                "city": data['city']['S'],
+                "timestamp": data['timestamp']['S'],
+                "temperature": data['temperature']['S'],
+                "humidity": data['humidity']['S']
+            }
+
     return "Stream processed"
